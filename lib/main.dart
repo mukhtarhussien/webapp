@@ -219,7 +219,7 @@ class _LoginScreenState extends State<LoginScreen> {
             _roleChoices(),
             const SizedBox(height: 20),
             if (_googleVerified && _verifiedEmail != null) Container(padding: const EdgeInsets.all(11), margin: const EdgeInsets.only(bottom: 12), decoration: BoxDecoration(color: const Color(0xFFF6F7FA), borderRadius: BorderRadius.circular(10)), child: Text('تم التحقق من Google: $_verifiedEmail', textDirection: TextDirection.ltr, style: const TextStyle(fontSize: 11, color: gold))),
-            TextField(controller: _identifier, textDirection: TextDirection.auto, keyboardType: TextInputType.emailAddress, autofillHints: const [AutofillHints.username], decoration: const InputDecoration(labelText: 'البريد الإلكتروني أو اسم المستخدم أو رقم الهاتف', prefixIcon: Icon(Icons.person_outline_rounded))),
+            TextField(controller: _identifier, textDirection: TextDirection.ltr, keyboardType: TextInputType.emailAddress, autofillHints: const [AutofillHints.username], decoration: const InputDecoration(labelText: 'البريد الإلكتروني أو اسم المستخدم أو رقم الهاتف', prefixIcon: Icon(Icons.person_outline_rounded))),
             const SizedBox(height: 12),
             TextField(controller: _password, obscureText: _hidePassword, onSubmitted: (_) => _login(), autofillHints: const [AutofillHints.password], decoration: InputDecoration(labelText: 'كلمة المرور', prefixIcon: const Icon(Icons.lock_outline_rounded), suffixIcon: IconButton(onPressed: () => setState(() => _hidePassword = !_hidePassword), icon: Icon(_hidePassword ? Icons.visibility_outlined : Icons.visibility_off_outlined))),),
             const SizedBox(height: 14),
@@ -392,7 +392,62 @@ class _AppShellState extends State<AppShell> {
     final announcements = _listFrom(['announcements']);
     final notifications = _listFrom(['notifications']);
     return ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 26), children: [
-      Container(padding: const EdgeInsets.all(22), decoration: BoxDecoration(borderRadius: BorderRadius.circular(22), gradient: const LinearGradient(colors: [navyDeep, Color(0xFF203451)], begin: Alignment.topRight, end: Alignment.bottomLeft)), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [const Text('بوابتك التعليمية', style: TextStyle(color: goldLight, fontSize: 11, fontWeight: FontWeight.w800)), const SizedBox(height: 9), Text(name, style: const TextStyle(color: Colors.white, fontSize: 23, fontWeight: FontWeight.w800)), const SizedBox(height: 7), const Text('كل ما تحتاجه لمتابعة دراستك في مكان واحد.', style: TextStyle(color: Color(0xCCFFFFFF), height: 1.8, fontSize: 12)), const SizedBox(height: 19), Row(children: [_stat('الدرجات', grades.length, Icons.auto_graph_rounded), const SizedBox(width: 10), _stat('الواجبات', assignments.length, Icons.assignment_outlined), const SizedBox(width: 10), _stat('الإشعارات', notifications.length, Icons.notifications_none_rounded)])]),
+      Container(
+        padding: const EdgeInsets.all(22),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(22),
+          gradient: const LinearGradient(
+            colors: [navyDeep, Color(0xFF203451)],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'بوابتك التعليمية',
+              style: TextStyle(
+                color: goldLight,
+                fontSize: 11,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const SizedBox(height: 9),
+            Text(
+              name,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 23,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            const SizedBox(height: 7),
+            const Text(
+              'كل ما تحتاجه لمتابعة دراستك في مكان واحد.',
+              style: TextStyle(
+                color: Color(0xCCFFFFFF),
+                height: 1.8,
+                fontSize: 12,
+              ),
+            ),
+            const SizedBox(height: 19),
+            Row(
+              children: [
+                _stat('الدرجات', grades.length, Icons.auto_graph_rounded),
+                const SizedBox(width: 10),
+                _stat('الواجبات', assignments.length, Icons.assignment_outlined),
+                const SizedBox(width: 10),
+                _stat(
+                  'الإشعارات',
+                  notifications.length,
+                  Icons.notifications_none_rounded,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
       const SizedBox(height: 22),
       const _SectionTitle('إعلانات المدرسة'),
       if (announcements.isEmpty) const _EmptyCard(text: 'لا توجد إعلانات منشورة حاليًا.') else ...announcements.take(4).map((a) { final m = a is Map ? Map<String, dynamic>.from(a) : <String, dynamic>{}; return _InfoCard(icon: Icons.campaign_outlined, title: _first(m, ['titleAr', 'title', 'titleEn'], 'إعلان'), subtitle: _first(m, ['bodyAr', 'body', 'bodyEn'], ''), trailing: ''); }),
