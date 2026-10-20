@@ -1,0 +1,7 @@
+import { asc } from 'drizzle-orm'
+import { BookOpen, DoorOpen, MapPin, School } from 'lucide-react'
+import { requireDb } from '@/db'
+import { schoolLocations } from '@/db/schema'
+import { Localized } from '@/components/localized'
+export const dynamic='force-dynamic'
+export default async function MapPage(){const rows=await requireDb().select().from(schoolLocations).orderBy(asc(schoolLocations.nameAr));return <div className="page-card card"><h1 className="page-title"><Localized ar="خريطة المدرسة" en="Campus map"/></h1><p className="page-subtitle"><Localized ar="المرافق ومواقعها كما عرّفتها الإدارة." en="Facilities and locations configured by administration."/></p><div className="map-visual">{rows.length?rows.map((r,i)=><div className="map-location-dot" style={{left:`${r.mapX??20+(i*17)%60}%`,top:`${r.mapY??25+(i*21)%55}%`}} key={r.id} title={r.nameAr}><MapPin size={18}/><span>{r.nameAr}</span></div>):<div className="calendar-empty-state"><School size={38}/><h2><Localized ar="لم تُعرّف مواقع بعد" en="No campus locations yet"/></h2><p><Localized ar="أضف مرافق المدرسة من لوحة الإدارة." en="Add school facilities from the admin console."/></p></div>}</div><div className="feature-grid">{rows.slice(0,6).map((r,i)=><div className="feature-card" key={r.id}>{i%3===0?<School size={16}/>:i%3===1?<BookOpen size={16}/>:<DoorOpen size={16}/>}<h3><Localized ar={r.nameAr} en={r.nameEn}/></h3><p><Localized ar={r.descriptionAr??'بدون وصف'} en={r.descriptionEn??'No description'}/></p></div>)}</div></div>}

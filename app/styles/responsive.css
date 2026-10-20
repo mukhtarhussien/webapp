@@ -1,0 +1,78 @@
+/* Reduced-motion and responsive adjustments. */
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media(max-width: 800px) {
+  .login-motion-control {
+    padding: 12px 14px 0;
+  }
+
+  .login-motion-control .motion-toggle {
+    font-size: 10px;
+  }
+
+  .account-profile-card, .account-edit, .account-settings, .blocked-panel, .messages-page .page-card, .notifications-page .page-card {
+    padding: 16px;
+  }
+
+  .account-head {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .account-status {
+    margin-inline-start: 0;
+  }
+
+  .account-metrics {
+    gap: 6px;
+  }
+
+  .account-metrics strong {
+    font-size: 17px;
+  }
+
+  .account-metrics span {
+    font-size: 9px;
+  }
+
+  .account-form {
+    grid-template-columns: 1fr;
+  }
+
+  .account-form .button {
+    width: 100%;
+  }
+
+  .message-item {
+    flex-wrap: wrap;
+  }
+
+  .message-block-form {
+    margin-inline-start: 55px;
+  }
+
+  .notification-preference {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .notification-preference form {
+    width: 100%;
+  }
+
+  .notification-preference form button {
+    width: 100%;
+  }
+
+  .app-release-form button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,172 @@
+/* Shared visual refinements. */
+
+.brand strong, .admin-brand strong {
+  font-family: 'Reem Kufi', serif;
+  font-weight: 700;
+}
+
+.side-nav a, .bottom-nav a {
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+}
+
+.theme-trigger, .theme-option-copy strong, .lang-button, .drawer-links strong, .topbar-title strong {
+  font-family: 'Reem Kufi', 'Manrope', sans-serif;
+}
+
+.message-item, .message-item p, .community-post, .community-post p, .notification-row, .notification-row p, .notice-copy, .notice-copy p, .page-subtitle, .section-header p {
+  font-family: 'Amiri', serif;
+}
+
+.sidebar, .topbar, .card, .page-card, .drawer {
+  background: var(--surface);
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.sidebar {
+  border-left-color: var(--line);
+}
+
+.topbar {
+  background: var(--glass);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.brand-mark {
+  background: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+.brand-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 3px;
+}
+
+.side-profile {
+  background: var(--surface-soft);
+  border-color: var(--line);
+}
+
+.profile-avatar {
+  background: var(--accent-soft) !important;
+  color: var(--primary) !important;
+}
+
+.side-nav a {
+  color: var(--muted);
+}
+
+.side-nav a:hover, .side-nav a.active {
+  background: #EBE8DF;
+  color: var(--primary);
+}
+
+.icon-button, .lang-button, .top-action {
+  background: var(--surface);
+  color: var(--text-soft);
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.icon-button:hover, .lang-button:hover, .top-action:hover {
+  background: var(--surface-soft);
+  color: var(--primary);
+}
+
+.content-wrap {
+  padding-top: 29px;
+}
+
+.page-transition {
+  animation: page-enter .28s ease-out both;
+}
+
+.hero-card {
+  background: linear-gradient(125deg, var(--hero-a), var(--hero-b) 63%, var(--hero-c)) !important;
+  box-shadow: var(--shadow-strong) !important;
+}
+
+.hero-glow, .hero-card:after {
+  display: none;
+}
+
+.hero-content h1 {
+  letter-spacing: -.02em;
+}
+
+.button-primary {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border: 1px solid var(--primary) !important;
+}
+
+.button-primary:hover {
+  background: var(--primary-2) !important;
+}
+
+.button-light {
+  color: var(--primary) !important;
+  background: var(--surface) !important;
+}
+
+.button-ghost-light {
+  border-color: rgba(255,255,255,.3) !important;
+  background: rgba(255,255,255,.055) !important;
+}
+
+.section-header a, .setting-row code, .map-location-dot {
+  color: var(--primary) !important;
+}
+
+.stat-icon.blue, .stat-icon.purple, .stat-icon.orange, .stat-icon.green, .stat-card .stat-icon, .tone-blue .stat-icon, .tone-purple .stat-icon, .tone-orange .stat-icon, .tone-green .stat-icon {
+  background: var(--accent-soft) !important;
+  color: var(--primary) !important;
+}
+
+.subject-dot.blue, .subject-dot.purple, .subject-dot.orange, .subject-dot.green {
+  background: var(--accent) !important;
+}
+
+.mini-fill.blue, .mini-fill.purple, .mini-fill.orange, .mini-fill.green {
+  background: var(--primary) !important;
+}
+
+.notice-icon, .drawer-icon {
+  background: var(--surface-strong) !important;
+  color: var(--primary) !important;
+}
+
+.event-date.violet, .event-date.teal {
+  background: var(--surface-strong) !important;
+  color: var(--primary) !important;
+}
+
+.pill.slate {
+  background: var(--surface-strong) !important;
+  color: var(--muted) !important;
+}
+
+.admin-panel, .admin-form {
+  background: var(--surface);
+  box-shadow: none;
+  border-color: var(--line);
+}
+
+.admin-field input:focus, .admin-field select:focus, .admin-form textarea:focus, .form-stack input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(24,58,55,.075) !important;
+}
+
+.admin-danger {
+  color: #87443B !important;
+}
+
+.admin-danger:hover {
+  background: #F3E8E5 !important;
+}
+

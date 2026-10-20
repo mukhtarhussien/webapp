@@ -1,0 +1,252 @@
+/* Today, assignments, and activity. */
+
+/*
+ * New dashboard sections
+ */
+
+.today-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.15fr) minmax(340px,.85fr);
+  gap: 18px;
+}
+
+.today-card {
+  padding: 21px;
+}
+
+.today-list, .assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.today-row, .assignment-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 3px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.today-row:last-child, .assignment-row:last-child {
+  border-bottom: 0;
+}
+
+.today-time {
+  font: 800 11px Manrope;
+  color: var(--primary);
+  width: 46px;
+  flex: none;
+}
+
+.today-copy, .assignment-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.today-copy strong, .assignment-copy strong {
+  display: block;
+  font-size: 10px;
+}
+
+.today-copy span, .assignment-copy span {
+  display: block;
+  color: var(--muted);
+  font-size: 8px;
+  margin-top: 2px;
+}
+
+.today-state, .assignment-pill {
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 7px;
+  font-weight: 800;
+  background: var(--surface-strong);
+  color: var(--muted);
+}
+
+.assignment-status {
+  width: 31px;
+  height: 31px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  background: color-mix(in srgb,var(--primary) 10%,var(--surface-strong));
+  color: var(--primary);
+}
+
+.assignment-status.done {
+  background: color-mix(in srgb,var(--accent) 12%,var(--surface-strong));
+  color: var(--accent);
+}
+
+.assignment-pill.done {
+  background: color-mix(in srgb,var(--accent) 13%,var(--surface-strong));
+  color: var(--accent);
+}
+
+.assignment-pill.open {
+  background: color-mix(in srgb,#f0a340 13%,var(--surface-strong));
+  color: #b77615;
+}
+
+.activity-card {
+  padding: 21px;
+}
+
+.activity-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px 1px minmax(0,1fr);
+  column-gap: 11px;
+  min-height: 63px;
+}
+
+.activity-icon {
+  width: 33px;
+  height: 33px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  background: var(--surface-strong);
+  color: var(--primary);
+}
+
+.activity-icon.purple {
+  background: #e9eee3;
+  color: #80683c;
+}
+
+.activity-icon.blue {
+  background: #e9edf4;
+  color: #253d64;
+}
+
+.activity-icon.green {
+  background: #e9eef5;
+  color: #405c82;
+}
+
+.activity-line {
+  width: 1px;
+  background: var(--line);
+  justify-self: center;
+  margin: 34px 0 0;
+  min-height: 29px;
+}
+
+.activity-item:last-child .activity-line {
+  visibility: hidden;
+}
+
+.activity-copy {
+  padding: 1px 0 17px;
+}
+
+.activity-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.activity-meta strong {
+  font-size: 10px;
+}
+
+.activity-meta span {
+  font: 700 8px Manrope;
+  color: var(--muted-2);
+  white-space: nowrap;
+}
+
+.activity-copy p {
+  margin: 3px 0 0;
+  font-size: 8px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+html[data-theme="dark"] .activity-icon.purple {
+  background: #263650;
+  color: #d5bf91;
+}
+
+html[data-theme="dark"] .activity-icon.blue {
+  background: #263c60;
+  color: #9eb2cf;
+}
+
+html[data-theme="dark"] .activity-icon.green {
+  background: #1d3551;
+  color: #9eb3d2;
+}
+
+html[data-theme="amoled"] .activity-icon.purple {
+  background: #131b2d;
+  color: #d5bf91;
+}
+
+html[data-theme="amoled"] .activity-icon.blue {
+  background: #07111f;
+  color: #9eb2cf;
+}
+
+html[data-theme="amoled"] .activity-icon.green {
+  background: #07111f;
+  color: #9eb3d2;
+}
+
+@media(max-width:1024px) {
+  .today-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:760px) {
+  .theme-trigger-text {
+    display: none;
+  }
+
+  .theme-trigger {
+    width: 39px;
+    padding: 0;
+  }
+
+  .theme-menu {
+    position: fixed;
+    top: 74px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+  }
+
+  .today-card, .activity-card {
+    padding: 17px;
+  }
+
+  .activity-item {
+    grid-template-columns: 33px 1px minmax(0,1fr);
+    column-gap: 9px;
+  }
+
+  .today-row, .assignment-row {
+    padding: 9px 1px;
+  }
+
+  .activity-meta {
+    align-items: flex-start;
+  }
+
+  .activity-meta strong {
+    max-width: 78%;
+  }
+}
+

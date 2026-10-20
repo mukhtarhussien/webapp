@@ -1,0 +1,54 @@
+/* Global design tokens and document defaults. */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Reem+Kufi:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #F2F4F8;
+  --bg-soft: #E9EDF4;
+  --surface: #FCFDFE;
+  --surface-soft: #F6F7FA;
+  --surface-strong: #E9EDF4;
+  --text: #171B25;
+  --text-soft: #3F4654;
+  --muted: #687386;
+  --muted-2: #8993A3;
+  --line: #DDE3EC;
+  --line-soft: #E8ECF3;
+  --primary: #14233D;
+  --primary-2: #2E4C74;
+  --accent: #B39154;
+  --accent-soft: #EEE7D7;
+  --hero-a: #0D192E;
+  --hero-b: #142643;
+  --hero-c: #738099;
+  --shadow: 0 8px 28px rgba(34,32,26,.045);
+  --shadow-strong: 0 16px 42px rgba(34,32,26,.085);
+  --glass: rgba(255,254,250,.92);
+  --theme-transition: rgba(92,123,171,.24);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', 'Amiri', sans-serif;
+  transition: background .42s ease, color .32s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+

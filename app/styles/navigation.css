@@ -1,0 +1,123 @@
+/* Side navigation, drawer, and mobile navigation. */
+
+.bottom-nav {
+  display: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.drawer {
+  position: fixed;
+  z-index: 60;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 375px;
+  padding: 22px;
+  animation: slideIn .2s ease;
+}
+
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.drawer-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.drawer-title strong, .drawer-title span {
+  display: block;
+}
+
+.drawer-title strong {
+  font-size: 14px;
+}
+
+.drawer-title span {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 11px;
+}
+
+.drawer-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 6px;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+.drawer-links a>div:nth-child(2) {
+  flex: 1;
+}
+
+.drawer-links strong, .drawer-links span {
+  display: block;
+}
+
+.drawer-links strong {
+  font-size: 11px;
+}
+
+.drawer-links span {
+  font-size: 8px;
+  color: #8f9388;
+  margin-top: 1px;
+}
+
+.drawer-icon {
+  width: 37px;
+  height: 37px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+}
+
+.drawer-icon.purple {
+  background: #edf0f5;
+  color: #80683c;
+}
+
+.drawer-icon.blue {
+  background: #e9edf4;
+  color: #253d64;
+}
+
+.drawer-icon.green {
+  background: #e9eef5;
+  color: #7085a7;
+}
+
+.drawer-icon.orange {
+  background: #fff2e6;
+  color: #ef9132;
+}
+
+.drawer-icon.slate {
+  background: #f2f4f7;
+  color: #62675c;
+}
+
+.scrim {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  background: rgba(27,31,23,.3);
+  border: 0;
+  animation: fadeIn .2s ease;
+}
+

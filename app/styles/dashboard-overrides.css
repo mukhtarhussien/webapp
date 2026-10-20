@@ -1,0 +1,174 @@
+/* Dashboard refinements. */
+
+/* Shared spacing and decoration refinements. */
+
+.dot {
+  background: #405c82;
+}
+
+.page-stack {
+  gap: 22px;
+}
+
+.hero-card:after {
+  content: "";
+  position: absolute;
+  right: 18%;
+  top: -70px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.stats-grid {
+  gap: 15px;
+}
+
+.compact-stats {
+  grid-template-columns: repeat(3,1fr);
+}
+
+.stat-card {
+  border-color: #e2e5da;
+  box-shadow: 0 8px 25px rgba(42,52,72,.045);
+}
+
+.stat-icon {
+  background: #ecefe5!important;
+  color: #80683c!important;
+}
+
+.tone-purple .stat-icon {
+  background: #e9eee3!important;
+  color: #80683c!important;
+}
+
+.tone-orange .stat-icon {
+  background: #fff3dd!important;
+  color: #c88717!important;
+}
+
+.tone-green .stat-icon {
+  background: #e9eef5!important;
+  color: #405c82!important;
+}
+
+.dashboard-grid {
+  gap: 18px;
+}
+
+.calm-grid {
+  grid-template-columns: minmax(0,1.3fr) minmax(320px,.7fr);
+}
+
+.card {
+  border-color: #e2e5da;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+}
+
+.chart-card, .schedule-card {
+  padding: 21px;
+}
+
+.section-heading h2 {
+  font-size: 14px;
+}
+
+.section-heading p {
+  font-size: 9px;
+}
+
+.subject-row {
+  padding: 13px 0;
+}
+
+.subject-main strong {
+  font-size: 10px;
+}
+
+.subject-main small {
+  font-size: 8px;
+}
+
+.subject-score strong {
+  font-size: 14px;
+}
+
+.subject-score span {
+  color: #405c82;
+}
+
+.schedule-card .event-list {
+  margin-top: 7px;
+}
+
+.event-date {
+  box-shadow: none;
+}
+
+.event-date.violet {
+  background: #e9eee3;
+  color: #725a34;
+}
+
+.event-date.teal {
+  background: #e9eef5;
+  color: #405c82;
+}
+
+.event-date.amber {
+  background: #fff2d9;
+  color: #b97912;
+}
+
+.event-date.rose {
+  background: #f2e9df;
+  color: #95634e;
+}
+
+.notice-strip {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 17px;
+}
+
+.notice-strip-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: #e9eee3;
+  color: #80683c;
+}
+
+.notice-strip>div:nth-child(2) {
+  flex: 1;
+}
+
+.notice-strip strong, .notice-strip span {
+  display: block;
+}
+
+.notice-strip strong {
+  font-size: 10px;
+}
+
+.notice-strip span {
+  font-size: 8px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.notice-strip>a {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #80683c;
+  font-size: 9px;
+  font-weight: 800;
+}
+

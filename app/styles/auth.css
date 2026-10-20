@@ -1,0 +1,288 @@
+/* Authentication and registration. */
+
+/*
+ * Inline demo colors stay readable in dark palettes.
+ */
+
+html[data-theme="dark"] [style*="#8f9388"], html[data-theme="amoled"] [style*="#8f9388"], html[data-theme="dark"] [style*="#929bad"], html[data-theme="amoled"] [style*="#929bad"], html[data-theme="dark"] [style*="#68695f"], html[data-theme="amoled"] [style*="#68695f"], html[data-theme="dark"] [style*="#777b70"], html[data-theme="amoled"] [style*="#777b70"], html[data-theme="dark"] [style*="#777b70"], html[data-theme="amoled"] [style*="#777b70"], html[data-theme="dark"] [style*="#72766c"], html[data-theme="amoled"] [style*="#72766c"] {
+  color: var(--muted)!important;
+}
+
+html[data-theme="dark"] [style*="#f6f6ef"], html[data-theme="amoled"] [style*="#f6f6ef"] {
+  background: var(--surface-strong)!important;
+}
+
+/*
+ * Database + admin console
+ */
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.auth-card {
+  width: min(440px,100%);
+  padding: 28px;
+}
+
+.auth-card h1 {
+  margin: 8px 0 6px;
+  font-size: 28px;
+}
+
+.auth-card>p {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.auth-back {
+  display: block;
+  margin-top: 16px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 12px;
+  text-align: center;
+}
+
+.form-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.form-stack label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-stack input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 12px;
+  outline: none;
+}
+
+.form-error {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(220,70,70,.1);
+  color: #e05252;
+  font-size: 11px;
+  margin: 12px 0;
+}
+
+.form-success {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(53,168,112,.11);
+  color: #2f9562;
+  font-size: 11px;
+  margin: 12px 0;
+}
+
+.google-login-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 13px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.google-login-button:hover {
+  background: var(--surface-strong);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 14px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.auth-divider:before, .auth-divider:after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.registration-login-note, .registration-note {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+
+.registration-google {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface-strong);
+  font-size: 11px;
+  margin-bottom: 14px;
+}
+
+.registration-summary {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.registration-summary>div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 10px;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 10px;
+}
+
+.registration-summary>div:last-child {
+  border-bottom: 0;
+}
+
+.registration-summary span {
+  color: var(--muted);
+}
+
+.registration-summary strong {
+  overflow-wrap: anywhere;
+}
+
+.registration-admin-list {
+  display: grid;
+  gap: 12px;
+}
+
+.registration-admin-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  border-radius: 14px;
+}
+
+.registration-admin-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.registration-admin-head>div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.registration-admin-head strong {
+  font-size: 13px;
+}
+
+.registration-admin-head span {
+  font-size: 9px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.registration-admin-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.registration-admin-meta span {
+  font-size: 9px;
+  color: var(--muted);
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.registration-admin-meta b {
+  color: var(--text);
+}
+
+.registration-admin-actions {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+  min-width: 230px;
+}
+
+.registration-admin-actions form {
+  margin: 0;
+}
+
+.registration-admin-actions .button {
+  width: 100%;
+}
+
+.registration-reject-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 7px;
+}
+
+.registration-reject-form input {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 8px 9px;
+  font-size: 9px;
+  outline: none;
+}
+
+.registration-reject-form button {
+  white-space: nowrap;
+}
+
+@media(max-width:800px) {
+  .registration-admin-card {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-admin-actions {
+    min-width: 0;
+  }
+
+  .registration-reject-form {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-reject-form button {
+    width: 100%;
+  }
+}
+

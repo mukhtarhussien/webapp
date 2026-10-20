@@ -1,0 +1,175 @@
+/* Account security. */
+
+.auth-security-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--hero-a);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.auth-secondary {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-soft);
+  border-radius: 12px;
+  padding: 11px 13px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.security-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.security-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.security-card {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.security-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.security-heading h2 {
+  margin: 6px 0;
+  font-size: 20px;
+}
+
+.security-heading p, .security-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.security-pill {
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.security-pill-on {
+  color: #4e6c94;
+}
+
+.security-form {
+  display: grid;
+  gap: 12px;
+}
+
+.security-setup-grid, .security-two-col {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+}
+
+.security-box {
+  padding: 15px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  border-radius: 14px;
+  display: grid;
+  gap: 11px;
+}
+
+.security-box h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.security-box textarea {
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.security-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.security-title-row h3 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.security-recovery {
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.security-recovery p {
+  margin: 7px 0 12px;
+}
+
+.recovery-code-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 8px;
+}
+
+.recovery-code-grid code {
+  padding: 9px 10px;
+  border: 1px dashed var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  font-family: monospace;
+  text-align: center;
+  letter-spacing: .06em;
+}
+
+.security-danger-button {
+  width: 100%;
+  padding: 11px 13px;
+}
+
+.button-secondary {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 11px 13px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.button-secondary:hover {
+  background: var(--surface-strong);
+}
+
+@media(max-width:800px) {
+  .security-setup-grid, .security-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .recovery-code-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-heading {
+    flex-direction: column;
+  }
+}
+

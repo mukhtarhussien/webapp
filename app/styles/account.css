@@ -1,0 +1,274 @@
+/* Account and preferences. */
+
+.account-page {
+  gap: 15px;
+}
+
+.account-profile-card, .account-edit, .account-settings, .blocked-panel {
+  padding: 22px;
+}
+
+.account-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.account-head h1 {
+  margin: 4px 0;
+  font-size: 24px;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.account-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.account-avatar {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 22px;
+}
+
+.account-status {
+  margin-inline-start: auto;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.account-status span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-inline-end: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.account-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.account-metrics > div {
+  display: grid;
+  gap: 5px;
+}
+
+.account-metrics span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.account-metrics strong {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.account-edit .section-header h2, .account-settings .section-header h2, .blocked-panel .section-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  font-size: 17px;
+}
+
+.account-edit .section-header p, .account-settings .section-header p, .blocked-panel .section-header p {
+  margin-top: 5px;
+}
+
+.quiet-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--primary);
+}
+
+.account-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+
+.account-form .button {
+  justify-self: start;
+  min-width: 145px;
+}
+
+.account-setting-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.account-setting-row > span:nth-child(2) {
+  display: grid;
+  gap: 4px;
+  flex: 1;
+}
+
+.account-setting-row strong {
+  font-size: 12px;
+}
+
+.account-setting-row small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.setting-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-strong);
+  color: var(--primary);
+  border-radius: 10px;
+}
+
+.setting-action {
+  font-size: 11px;
+  color: var(--primary);
+}
+
+
+.account-avatar {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.account-avatar img,
+.profile-photo-preview img,
+.profile-avatar img,
+.admin-avatar img,
+.avatar img,
+.message-avatar img,
+.chat-contact-avatar img,
+.chat-thread-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo-settings {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-photo-preview {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface-strong);
+  color: var(--primary);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.profile-photo-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.profile-photo-copy > strong {
+  display: block;
+  font-size: 13px;
+}
+
+.profile-photo-copy > p {
+  margin: 4px 0 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.profile-photo-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-photo-input {
+  display: none;
+}
+
+.profile-photo-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.profile-photo-notice {
+  display: block;
+  min-height: 18px;
+  margin-top: 6px;
+  color: var(--primary);
+  font-size: 10px;
+}
+
+.profile-photo-spinner {
+  animation: profile-photo-spin 1s linear infinite;
+}
+
+@keyframes profile-photo-spin {
+  to { transform: rotate(360deg); }
+}
+
+.account-photo-card {
+  padding: 16px 22px;
+}
+
+
+@media (max-width: 420px) {
+  .account-photo-card {
+    padding: 14px;
+  }
+
+  .profile-photo-settings {
+    align-items: flex-start;
+    gap: 11px;
+  }
+
+  .profile-photo-preview {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .profile-photo-actions {
+    flex-wrap: wrap;
+  }
+}

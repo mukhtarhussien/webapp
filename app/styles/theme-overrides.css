@@ -1,0 +1,75 @@
+/* Theme-specific component overrides. */
+
+html[data-theme="dark"] {
+  --bg: #121722;
+  --bg-soft: #191F2D;
+  --surface: #1D2432;
+  --surface-soft: #222A3A;
+  --surface-strong: #293246;
+  --text: #F0F2F7;
+  --text-soft: #D5DCE8;
+  --muted: #A3AEC0;
+  --muted-2: #8995A8;
+  --line: #38445A;
+  --line-soft: #2D374A;
+  --primary: #A9BCD9;
+  --primary-2: #C6D4E9;
+  --accent: #D1B074;
+  --accent-soft: #343B4A;
+  --hero-a: #0b1527;
+  --hero-b: #142643;
+  --hero-c: #3B4D68;
+  --glass: rgba(26,32,47,.92);
+}
+
+html[data-theme="amoled"] {
+  --bg: #000;
+  --bg-soft: #050505;
+  --surface: #000;
+  --surface-soft: #090D16;
+  --surface-strong: #111827;
+  --text: #F4F6FB;
+  --text-soft: #DDE3ED;
+  --muted: #969FAD;
+  --muted-2: #707D91;
+  --line: #242C3B;
+  --line-soft: #171D29;
+  --primary: #B8CBE5;
+  --primary-2: #CFDCF0;
+  --accent: #D9B878;
+  --accent-soft: #302A20;
+  --hero-a: #0B1527;
+  --hero-b: #11233F;
+  --hero-c: #30415c;
+  --glass: rgba(0,0,0,.92);
+}
+
+html[data-theme="dark"] .side-nav a:hover, html[data-theme="dark"] .side-nav a.active, html[data-theme="amoled"] .side-nav a:hover, html[data-theme="amoled"] .side-nav a.active {
+  background: rgba(147,168,200,.13);
+  color: var(--primary);
+}
+
+html[data-theme="dark"] .admin-form, html[data-theme="dark"] .admin-panel, html[data-theme="amoled"] .admin-form, html[data-theme="amoled"] .admin-panel {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+html[data-theme="dark"] .form-stack input, html[data-theme="dark"] .form-stack select, html[data-theme="dark"] .form-stack textarea, html[data-theme="amoled"] .form-stack input, html[data-theme="amoled"] .form-stack select, html[data-theme="amoled"] .form-stack textarea {
+  background: var(--surface-soft);
+  color: var(--text);
+  border-color: var(--line);
+}
+
+html[data-theme="dark"] .notification-preference, html[data-theme="amoled"] .notification-preference {
+  background: var(--surface-soft);
+}
+
+html[data-theme="dark"] .account-status, html[data-theme="amoled"] .account-status {
+  color: var(--muted);
+}
+
+html[data-theme="amoled"] .hero-card {
+  box-shadow: 0 20px 52px rgba(0,0,0,.58) !important;
+}
+

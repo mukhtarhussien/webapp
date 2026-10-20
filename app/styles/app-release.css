@@ -1,0 +1,75 @@
+/* Application release and upload. */
+
+.app-release-manager {
+  display: grid;
+  gap: 16px;
+}
+
+.app-release-current {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.app-release-current > div:nth-child(2) {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+}
+
+.app-release-current strong {
+  font-size: 12px;
+}
+
+.app-release-current span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.app-release-symbol {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  background: var(--accent-soft);
+  color: var(--primary);
+  border-radius: 11px;
+}
+
+.app-release-form {
+  display: grid;
+  gap: 13px;
+}
+
+.app-release-file {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.app-release-status {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface-soft);
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.app-release-status.success {
+  border-color: #BFCFC7;
+  background: #EEF4EE;
+  color: #2b4268;
+}
+
+.app-release-form button {
+  justify-self: start;
+}
+

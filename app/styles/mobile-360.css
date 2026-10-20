@@ -1,0 +1,400 @@
+/* Small-screen layout for phones around 360 CSS pixels wide. */
+@media (max-width: 380px) {
+  .app-root,
+  .main-shell,
+  .content-wrap,
+  .page-transition,
+  .page-stack,
+  .page-card,
+  .admin-root,
+  .admin-main,
+  .admin-page {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .topbar {
+    gap: 7px;
+    padding-inline: 10px;
+  }
+
+  .topbar-title {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .topbar-title span,
+  .topbar-title strong {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .top-actions {
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .top-actions > .top-action {
+    display: none;
+  }
+
+  .theme-trigger {
+    width: 39px;
+    min-width: 39px;
+    gap: 0;
+    padding-inline: 0;
+  }
+
+  .theme-trigger-text,
+  .theme-chevron {
+    display: none;
+  }
+
+  .lang-button {
+    gap: 4px;
+    padding-inline: 8px;
+  }
+
+  .content-wrap {
+    padding-inline: 10px;
+  }
+
+  .hero-card {
+    padding-inline: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 120px;
+    min-width: 0;
+    padding-inline: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-grid,
+  .bottom-grid,
+  .calendar-layout,
+  .today-grid,
+  .feature-grid {
+    grid-template-columns: minmax(0, 1fr);
+    min-width: 0;
+  }
+
+  .subject-row {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.8fr) auto;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .subject-main,
+  .subject-main > div,
+  .subject-meter {
+    min-width: 0;
+  }
+
+  .subject-main strong,
+  .subject-main small {
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-card {
+    padding: 12px;
+  }
+
+  .calendar-weekdays,
+  .calendar-grid {
+    gap: 3px;
+  }
+
+  .calendar-grid span {
+    height: 36px;
+  }
+
+  .today-card,
+  .activity-card {
+    padding: 14px;
+  }
+
+  .admin-main {
+    padding: 12px;
+  }
+
+  .admin-sidebar {
+    padding: 12px;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-stat {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 6px;
+    min-width: 0;
+    padding: 10px;
+  }
+
+  .admin-stat span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .admin-stat strong {
+    grid-column: 2;
+    font-size: 15px;
+  }
+
+  .admin-header h1 {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .admin-panel > summary,
+  .admin-panel-body {
+    padding: 12px;
+  }
+
+  .auth-page {
+    padding: 12px;
+  }
+
+  .auth-card {
+    min-width: 0;
+    padding: 18px;
+  }
+
+  .registration-summary > div {
+    grid-template-columns: minmax(70px, 90px) minmax(0, 1fr);
+  }
+
+  .registration-summary strong,
+  .registration-google > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .account-profile-card,
+  .account-edit,
+  .account-settings,
+  .blocked-panel,
+  .messages-page .page-card,
+  .notifications-page .page-card {
+    padding: 14px;
+  }
+
+  .account-head > div:nth-child(2),
+  .notification-preference > div:nth-child(2),
+  .notification-copy,
+  .message-copy {
+    min-width: 0;
+  }
+
+  .account-head h1,
+  .account-head p,
+  .notification-preference p,
+  .notification-copy h3,
+  .message-heading strong {
+    overflow-wrap: anywhere;
+  }
+
+  .notification-preference {
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .message-item {
+    gap: 8px;
+  }
+
+  .message-heading {
+    flex-wrap: wrap;
+  }
+
+  .message-block-form {
+    width: 100%;
+    margin-inline-start: 0;
+  }
+
+  .notification-row {
+    gap: 8px;
+  }
+
+  .upload-row {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .upload-row > div:nth-child(2) {
+    min-width: 0;
+  }
+
+  .upload-row strong {
+    overflow-wrap: anywhere;
+  }
+
+  .registration-admin-card,
+  .registration-admin-actions,
+  .registration-reject-form,
+  .admin-two-col,
+  .admin-form-grid {
+    min-width: 0;
+  }
+
+  .bottom-nav {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Fluid sizing: card and type dimensions follow the available phone width. */
+@media (max-width: 600px) {
+  :root {
+    --mobile-page-gutter: clamp(10px, 3.4vw, 17px);
+    --mobile-card-gap: clamp(9px, 3vw, 14px);
+    --mobile-card-padding: clamp(12px, 4.2vw, 19px);
+    --mobile-card-radius: clamp(14px, 4.8vw, 21px);
+  }
+
+  .content-wrap {
+    padding: clamp(14px, 4vw, 20px) var(--mobile-page-gutter) clamp(82px, 23vw, 96px);
+  }
+
+  .page-stack {
+    gap: clamp(14px, 4.4vw, 22px);
+  }
+
+  .page-card,
+  .card,
+  .account-profile-card,
+  .account-edit,
+  .account-settings,
+  .blocked-panel,
+  .messages-page .page-card,
+  .notifications-page .page-card,
+  .calendar-card,
+  .events-card,
+  .today-card,
+  .activity-card,
+  .chart-card,
+  .notice-card,
+  .progress-card,
+  .community-card,
+  .feature-card,
+  .security-card {
+    min-width: 0;
+    padding: var(--mobile-card-padding);
+    border-radius: var(--mobile-card-radius);
+  }
+
+  .hero-card {
+    min-height: clamp(238px, 72vw, 300px);
+    padding: clamp(14px, 4.2vw, 20px);
+    border-radius: var(--mobile-card-radius);
+  }
+
+  .hero-content h1,
+  .page-title,
+  .page-heading h1,
+  .admin-header h1,
+  .account-head h1 {
+    font-size: clamp(21px, 6.6vw, 28px);
+    overflow-wrap: anywhere;
+  }
+
+  .section-header h2,
+  .section-heading h2,
+  .account-edit .section-header h2,
+  .account-settings .section-header h2,
+  .blocked-panel .section-header h2 {
+    font-size: clamp(14px, 4.2vw, 18px);
+  }
+
+  .stats-grid,
+  .compact-stats,
+  .admin-stats {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 148px), 1fr));
+    gap: var(--mobile-card-gap);
+  }
+
+  .compact-stats .stat-card:last-child {
+    grid-column: auto;
+  }
+
+  .stat-card {
+    min-width: 0;
+    gap: clamp(8px, 2.6vw, 12px);
+    padding: clamp(11px, 3.8vw, 17px);
+  }
+
+  .stat-icon {
+    width: clamp(32px, 10vw, 39px);
+    height: clamp(32px, 10vw, 39px);
+    flex: 0 0 clamp(32px, 10vw, 39px);
+  }
+
+  .stat-value {
+    font-size: clamp(18px, 6vw, 24px);
+  }
+
+  .admin-main {
+    min-width: 0;
+    padding: clamp(12px, 3.8vw, 17px);
+  }
+
+  .admin-stat {
+    min-width: 0;
+    gap: clamp(5px, 2vw, 8px);
+    padding: clamp(9px, 3vw, 13px);
+  }
+
+  .admin-stat strong {
+    font-size: clamp(14px, 4.6vw, 17px);
+  }
+
+  .admin-panel > summary,
+  .admin-panel-body {
+    padding: clamp(11px, 3.8vw, 16px);
+  }
+
+  .account-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 82px), 1fr));
+    gap: var(--mobile-card-gap);
+  }
+
+  .account-metrics strong {
+    font-size: clamp(17px, 5.4vw, 21px);
+  }
+
+  .calendar-weekdays,
+  .calendar-grid {
+    gap: clamp(2px, 1vw, 5px);
+  }
+
+  .calendar-grid span {
+    height: clamp(32px, 10vw, 42px);
+  }
+
+  .app-root,
+  .main-shell,
+  .content-wrap,
+  .page-transition,
+  .page-stack,
+  .admin-root,
+  .admin-main,
+  .admin-page,
+  .stats-grid > *,
+  .compact-stats > *,
+  .admin-stats > * {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
